@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700);
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
+
+@body-bg: #fff;
+@myDiv-fg: #f00;
+@shadow-color: #23203b;
+@input-color: lighten(#AB9E95, 10%);
+@input-border-color: #5E5165;
+@button-background-color: #1abc9c;
+
+
+body {
+  background-color: @body-bg;
+}
+div.myDiv {
+  color: @myDiv-fg;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  background: #348F50; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #348F50 , #56B4D3); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #348F50 , #56B4D3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+body {
+  background: transparent;
+}
+body, input, button {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+input[type="text"]::-webkit-input-placeholder {
+   color: rgba(255, 255, 255, 0.7);
+}
+input[type="password"]::-webkit-input-placeholder {
+   color: rgba(255, 255, 255, 0.7);
+}
+.normalize-input {
+  display: block;
+  width: auto;
+  height: auto;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: none;
+  border-radius: 0px;
+}
+
+.login {
+  padding: 15px;
+  width: 400px;
+  min-height: 400px;
+  margin: 2% auto 0 auto;
+
+  .heading {
+    text-align: center;
+    margin-top: 1%;
+
+    h2 {
+      font-size: 3em;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.7);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+  }
+
+  form {
+    .input-group {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+      &:last-of-type {
+        border-top: none;
+      }
+
+      span {
+        background: transparent;
+        min-width: 53px;
+        border: none;
+
+        i {
+          font-size: 1.5em;
+          color: rgba(255, 255, 255, 0.2);
+        }
+      }
+    }
+
+    input.form-control {
+      .normalize-input;
+
+      padding: 10px;
+      font-size: 1.6em;
+      width: 100%;
+      background: transparent;
+      color: white;
+
+      &:focus {
+        border: none;
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      background: @button-background-color;
+      border: none;
+      font-size: 1.6em;
+      font-weight: 300;
+      padding: 5px 0;
+      width: 100%;
+      border-radius: 6px;
+      color: lighten(@button-background-color, 40%);
+
+      &:hover {
+        background: tint(@button-background-color, 4%);
+        -webkit-animation: hop 1s;
+        animation: hop 1s;
+      }
+    }
+  }
+}
