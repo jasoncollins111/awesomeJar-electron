@@ -18,17 +18,19 @@ var App  = React.createClass({
     };
   },
   handleChange() {
-    console.log(this.refs.input.getValue())
     this.setState({
-
-      email: this.refs.input.getValue()
+      user: this.refs.user.getValue(),
+      password: this.refs.password.getValue()
     });
   },
+
   handleSubmit(e) {
     e.preventDefault();
+    var password = this.refs.password.getValue();
+    var email = this.refs.user.getValue()
     this.firebaseRef.createUser({
-      email    : this.refs.input.getValue(),
-      password : this.refs.input.getValue()
+      password : password,
+      email    : email
     }, function(error, userData) {
       if (error) {
         console.log("Error creating user:", error);
@@ -46,25 +48,33 @@ var App  = React.createClass({
     <h1 className="awesome-jar">#Awesome Jar</h1>
     <div className="login">
       <div className="heading">
-        <h2>Sign in</h2>
+        <h2>Sign Up</h2>
         <form action="#">
 
           <div className="input-group input-group-lg">
             <span className="input-group-addon"><i className="fa fa-user"></i></span>
             <Input
-              type="textarea"
-              ref="input"
-              email={this.state.value}
+              type="text"
+              ref="user"
+              value={this.state.user}
               className="form-control"
               placeholder="Username or email"
               onChange={this.handleChange}
             ></Input>
           </div>
-
-
-
-            <button type="submit" onClick={this.handleSubmit} className="float">Login</button>
-           </form>
+          <div className="input-group input-group-lg">
+            <span className="input-group-addon"><i className="fa fa-user"></i></span>
+            <Input
+              type="password"
+              ref="password"
+              value={this.state.password}
+              className="form-control"
+              placeholder="Password"
+              onChange={this.handleChange}
+            ></Input>
+          </div>
+          <button type="submit" onClick={this.handleSubmit} className="float">Login</button>
+        </form>
       </div>
     </div>
     </div>
