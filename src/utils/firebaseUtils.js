@@ -48,6 +48,7 @@ var firebaseUtils = {
     }.bind(this));
   },
   isLoggedIn: function(){
+    console.log('is Logged In')
     return cachedUser && true || ref.getAuth() || false;
   },
   logout: function(){

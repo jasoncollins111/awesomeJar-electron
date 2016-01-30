@@ -22,9 +22,11 @@ var Main = React.createClass({
     var loginOrOut;
     var register;
     if(this.state.loggedIn){
+      console.log('loggedIn')
       loginOrOut = <li><Link to="/logout" className="navbar-brand">Logout</Link></li>;
       register = null
     } else {
+      console.log('logged')
       loginOrOut = <li><Link to="/login" className="navbar-brand">Login</Link></li>;
       register = <li><Link to="/register" className="navbar-brand"> Register </Link></li>;
     }

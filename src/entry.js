@@ -83,5 +83,5 @@ var App  = React.createClass({
   }
 })
 
-ReactDom.render((<App/>), document.getElementById('content'))
+module.exports = App;
 
