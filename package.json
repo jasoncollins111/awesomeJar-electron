@@ -22,7 +22,8 @@
     "firebase": "^2.4.0",
     "react": "^0.14.6",
     "react-bootstrap": "^0.28.2",
-    "react-dom": "^0.14.6"
+    "react-dom": "^0.14.6",
+    "react-router": "^2.0.0-rc5"
   },
   "scripts": {
     "start": "electron main.js",

@@ -26,6 +26,7 @@ var App  = React.createClass({
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log('context', this.context)
     var password = this.refs.password.getValue();
     var email = this.refs.user.getValue()
     this.firebaseRef.createUser({
