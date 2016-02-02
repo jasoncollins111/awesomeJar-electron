@@ -7,7 +7,7 @@
 @shadow-color: #23203b;
 @input-color: lighten(#AB9E95, 10%);
 @input-border-color: #5E5165;
-@button-background-color: white;
+@button-background-color: rgba(255, 255, 255, 0.5);
 
 
 body {
@@ -29,13 +29,13 @@ body {
 }
 body, input, button {
   font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 100;
+  font-weight: 200;
 }
 input[type="text"]::-webkit-input-placeholder {
-   color: rgba(255, 255, 255, 0.8);
+   color: #255254;
 }
 input[type="password"]::-webkit-input-placeholder {
-   color: rgba(255, 255, 255, 0.8);
+   color: #255254;
 }
 .awesome-jar{
   font-weight: lighter;
@@ -55,6 +55,19 @@ input[type="password"]::-webkit-input-placeholder {
   background: none;
   border-radius: 0px;
 }
+.button-container{
+  margin: auto;
+  width: 350px;
+  position: relative;
+  top: 270px;
+
+
+}
+a:hover{
+  text-decoration: none;
+
+}
+
 button {
   margin-top: 20px;
   background: @button-background-color;
@@ -70,6 +83,7 @@ button {
     background: tint(@button-background-color, 14%);
     -webkit-animation: hop 1s;
     animation: hop 1s;
+    text-decoration: none;
   }
 }
 .landing-button{
@@ -115,7 +129,7 @@ button {
 
         i {
           font-size: 1.5em;
-          color: rgba(255, 255, 255, 0.8);
+          color: #255254;
         }
       }
     }
@@ -127,7 +141,7 @@ button {
       font-size: 1.6em;
       width: 100%;
       background: transparent;
-      color: white;
+      color: #255254;
 
       &:focus {
         border: none;

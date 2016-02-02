@@ -49,11 +49,13 @@ var Landing  = React.createClass({
   render (){
     return (
     <div>
-    <h1 className="awesome-jar">#Awesome Jar</h1>
-    <span>
-      <Link to="/login" className="navbar-brand">Login</Link>
-      <Link to="/signup" className="navbar-brand">Sign Up</Link>
-    </span>
+      <h1 className="awesome-jar">#Awesome Jar</h1>
+      <div className="button-container">
+        <span>
+          <button href="/login" className="landing-buttons"><Link to="/login">Login</Link></button>
+          <button href="/signup" className="landing-buttons"><Link to="/signup">Sign Up</Link></button>
+        </span>
+      </div>
     </div>
     )
   }
