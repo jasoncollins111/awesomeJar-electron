@@ -1,4 +1,4 @@
-require('../less/main.less');
+require('../../less/main.less');
 'use strict';
 import React from "react";
 import ReactDom from "react-dom"
@@ -7,8 +7,9 @@ import {Input} from 'react-bootstrap';
 
 
 
-var App  = React.createClass({
+var SignUp  = React.createClass({
   componentWillMount() {
+    console.log('mounted in SignUp')
     this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com");
     console.log(this.firebaseRef)
   },
@@ -49,9 +50,7 @@ var App  = React.createClass({
     <h1 className="awesome-jar">#Awesome Jar</h1>
     <div className="login">
       <div className="heading">
-        <h2>Sign Up</h2>
         <form action="#">
-
           <div className="input-group input-group-lg">
             <span className="input-group-addon"><i className="fa fa-user"></i></span>
             <Input
@@ -64,7 +63,7 @@ var App  = React.createClass({
             ></Input>
           </div>
           <div className="input-group input-group-lg">
-            <span className="input-group-addon"><i className="fa fa-user"></i></span>
+            <span className="input-group-addon"><i className="fa fa-lock"></i></span>
             <Input
               type="password"
               ref="password"
@@ -74,7 +73,7 @@ var App  = React.createClass({
               onChange={this.handleChange}
             ></Input>
           </div>
-          <button type="submit" onClick={this.handleSubmit} className="float">Login</button>
+          <button type="submit" onClick={this.handleSubmit} className="float">Sign Up</button>
         </form>
       </div>
     </div>
@@ -83,5 +82,5 @@ var App  = React.createClass({
   }
 })
 
-module.exports = App;
+module.exports = SignUp;
 
