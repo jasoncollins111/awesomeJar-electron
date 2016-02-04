@@ -42,13 +42,13 @@ var firebaseUtils = {
         authData.email = userObj.email;
         cachedUser = authData;
         cb(authData);
+        console.log('cbOnRegister',cbOnRegister)
         this.onChange(true);
         cbOnRegister && cbOnRegister(true);
       }
     }.bind(this));
   },
   isLoggedIn: function(){
-    console.log('is Logged In')
     return cachedUser && true || ref.getAuth() || false;
   },
   logout: function(){

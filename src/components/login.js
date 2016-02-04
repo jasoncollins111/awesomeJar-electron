@@ -4,6 +4,7 @@ import React from "react";
 import ReactDom from "react-dom"
 import Firebase from "firebase"
 import {Input} from 'react-bootstrap';
+import firebaseUtils from '../utils/firebaseUtils';
 
 
 
@@ -11,6 +12,9 @@ var SignIn  = React.createClass({
   componentWillMount() {
     this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com");
     console.log(this.firebaseRef)
+  },
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
   },
   getInitialState() {
     return {
@@ -27,18 +31,14 @@ var SignIn  = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
     console.log('context', this.context)
-    var password = this.refs.password.getValue();
+    var pw = this.refs.password.getValue();
     var email = this.refs.user.getValue()
-    this.firebaseRef.createUser({
-      password : password,
-      email    : email
-    }, function(error, userData) {
-      if (error) {
-        console.log("Error creating user:", error);
-      } else {
-        console.log("Successfully created user account with uid:", userData.uid);
-      }
-    });
+    firebaseUtils.loginWithPW({email: email, password: pw}, function(){
+      var location = this.props.location
+      console.log('location', location)
+      console.log('context', this.context)
+      this.context.router.replace('home')
+    }.bind(this));
 
     this.setState({value: ""});
   },

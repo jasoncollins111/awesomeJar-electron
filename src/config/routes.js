@@ -10,12 +10,14 @@ var Landing = require('../components/landing.js');
 var Register = require('../components/signUp.js');
 var Main = require('../components/main.js')
 var Home = require("../components/home.js");
+import requireAuth from '../utils/authenticated.js'
 var routes = (
   <Router history={hashHistory}>
     <Route path='/' component={Main}>
       <IndexRoute component={Landing} />
       <Route path='signup' component={Register} />
       <Route path='login' component={Login} />
+      <Route path='home' component={Home} onEnter={requireAuth}/>
     </Route>
   </Router>
 );

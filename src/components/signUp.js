@@ -4,10 +4,13 @@ import React from "react";
 import ReactDom from "react-dom"
 import Firebase from "firebase"
 import {Input} from 'react-bootstrap';
-
+import firebaseUtils from '../utils/firebaseUtils.js'
 
 
 var SignUp  = React.createClass({
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   componentWillMount() {
     console.log('mounted in SignUp')
     this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com");
@@ -25,23 +28,15 @@ var SignUp  = React.createClass({
     });
   },
 
-  handleSubmit(e) {
+  handleSubmit: function(e){
     e.preventDefault();
-    console.log('context', this.context)
-    var password = this.refs.password.getValue();
+    var pw = this.refs.password.getValue();
     var email = this.refs.user.getValue()
-    this.firebaseRef.createUser({
-      password : password,
-      email    : email
-    }, function(error, userData) {
-      if (error) {
-        console.log("Error creating user:", error);
-      } else {
-        console.log("Successfully created user account with uid:", userData.uid);
+    firebaseUtils.createUser({email: email, password: pw}, function(result){
+      if(result){
+        this.context.router.replace('/')
       }
-    });
-
-    this.setState({value: ""});
+    }.bind(this));
   },
 
   render (){
