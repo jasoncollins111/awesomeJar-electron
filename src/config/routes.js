@@ -17,7 +17,7 @@ var routes = (
       <IndexRoute component={Landing} />
       <Route path='signup' component={Register} />
       <Route path='login' component={Login} />
-      <Route path='home' component={Home} onEnter={requireAuth}/>
+      <Route path='home' component={Home}/>
     </Route>
   </Router>
 );

@@ -17,12 +17,10 @@ module.exports = React.createClass({
   },
   render() {
     if(this.state.loggedIn){
-      console.log('loggedIn main')
+      console.log('loggedIn')
     }
     return <div>
-      <video autoPlay loop id="bgvid">
-          <source src="./assets/SkyAndClouds.mp4" type="video/mp4" />
-      </video>
+
       <div>
         {this.props.children}
       </div>

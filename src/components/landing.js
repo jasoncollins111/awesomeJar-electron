@@ -49,6 +49,9 @@ var Landing  = React.createClass({
   render (){
     return (
     <div>
+      <video autoPlay loop id="bgvid">
+        <source src="./assets/SkyAndClouds.mp4" type="video/mp4" />
+      </video>
       <h1 className="awesome-jar">#Awesome Jar</h1>
       <div className="button-container">
         <span>
