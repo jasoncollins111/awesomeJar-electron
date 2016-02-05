@@ -1,8 +1,10 @@
 var React = require("react");
-
+import InputAwesome from './jarSubmit.js'
 var Home = React.createClass({
   render: function(){
-    return <p> This is the Home Page.</p>
+    return <div>
+      <InputAwesome/>
+    </div>
   }
 });
 

@@ -2,7 +2,7 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
 
-@body-bg: #fff;
+@body-bg: rgba(55, 189, 172, 0.9);
 @myDiv-fg: #f00;
 @shadow-color: #23203b;
 @input-color: lighten(#AB9E95, 10%);
@@ -21,11 +21,12 @@ div.myDiv {
   padding: 0;
 }
 html {
-  background: black;
+  background: @body-bg;
 
 }
 body {
   background: transparent;
+  text-align: center;
 }
 body, input, button {
   font-family: 'Source Sans Pro', sans-serif;
@@ -166,4 +167,29 @@ video#bgvid {
     transform: translateX(-50%) translateY(-50%);
     background: no-repeat;
     background-size: cover;
+}
+
+.group-class{
+  float: none;
+  margin: 0 auto;
+}
+.jar-text{
+  width: 33% !important;
+  margin: 0 auto;
+}
+.jar-btn{
+  width:11% !important;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #255254;
+
+  &:hover {
+    background: tint(#255254,  4%);
+    -webkit-animation: hop 1s;
+    animation: hop 1s;
+    text-decoration: none;
+  }
+}
+.motivation{
+  margin: 20px;
 }
