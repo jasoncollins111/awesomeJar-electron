@@ -2,7 +2,7 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
 
-@body-bg: rgba(55, 189, 172, 0.9);
+@body-bg:#fff;
 @myDiv-fg: #f00;
 @shadow-color: #23203b;
 @input-color: lighten(#AB9E95, 10%);
@@ -12,6 +12,8 @@
 
 body {
   background-color: @body-bg;
+  background: transparent;
+  text-align: center;
 }
 div.myDiv {
   color: @myDiv-fg;
@@ -24,10 +26,7 @@ html {
   background: @body-bg;
 
 }
-body {
-  background: transparent;
-  text-align: center;
-}
+
 body, input, button {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 200;
@@ -93,65 +92,7 @@ button {
   width: 25%;
   margin-right: 10px;
 }
-.login {
-  padding: 15px;
-  width: 400px;
-  min-height: 400px;
-  margin: 2% auto 0 auto;
 
-  .heading {
-    text-align: center;
-    margin-top: 45%;
-
-    h2 {
-      font-size: 3em;
-      font-weight: 300;
-      color: rgba(255, 255, 255, 0.7);
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-  }
-
-  form {
-    .input-group {
-      border-radius: 2px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(255, 255, 255, 0.5);
-      margin-bottom: 15px;
-      &:last-of-type {
-        border-top: none;
-      }
-
-      span {
-        background: transparent;
-        min-width: 53px;
-        border: none;
-
-        i {
-          font-size: 1.5em;
-          color: #255254;
-        }
-      }
-    }
-
-    input.form-control {
-      .normalize-input;
-
-      padding: 10px;
-      font-size: 1.6em;
-      width: 100%;
-      background: transparent;
-      color: #255254;
-
-      &:focus {
-        border: none;
-      }
-    }
-
-
-  }
-}
 video#bgvid {
     position: fixed;
     top: 50%;
@@ -172,24 +113,73 @@ video#bgvid {
 .group-class{
   float: none;
   margin: 0 auto;
-}
-.jar-text{
-  width: 33% !important;
-  margin: 0 auto;
-}
-.jar-btn{
-  width:11% !important;
-  margin: 0 auto;
-  margin-top: 20px;
-  background-color: #255254;
+  display: inline-flex;
 
-  &:hover {
-    background: tint(#255254,  4%);
-    -webkit-animation: hop 1s;
-    animation: hop 1s;
-    text-decoration: none;
-  }
 }
-.motivation{
-  margin: 20px;
+.good-input{
+  border: 1px solid black;
+  width: 40%;
+  margin:auto;
+  margin-top: 2%;
+
+    .motivation{
+      margin: 20px;
+    }
+
+    .jar-text{
+      width: 65% !important;
+      margin: 0 auto;
+      margin-bottom: 2%;
+      font-size: 1.4em;
+      font-weight:400;
+      color: black;
+      display: inline-flex;
+    }
+    .jar-btn{
+      width:16% !important;
+      margin: 0 auto;
+      margin-top: 20px;
+      margin-bottom: 2%;
+      background-color: #255254;
+      display: inline-block;
+
+      &:hover {
+        background: tint(#255254,  4%);
+        -webkit-animation: hop 1s;
+        animation: hop 1s;
+        text-decoration: none;
+      }
+    }
+}
+
+
+
+.jar-item{
+  border: 1px solid black;
+  font-size: 20px;
+  font-weight: 400;
+  margin: auto;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  width: 350px;
+  height: 55px;
+  border-radius: 2px;
+}
+ul{
+  list-style-type: none;
+}
+.flexcontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row;
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+}
+.loginBtn{
+  margin-top: 60%;
+  background-color: #FCF8E3;
+  color:black
 }

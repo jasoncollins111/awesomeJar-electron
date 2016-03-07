@@ -7,6 +7,7 @@ var Router = ReactRouter.Router;
 var Link = ReactRouter.Link;
 import Firebase from "firebase"
 import {Input} from 'react-bootstrap';
+import firebaseUtils from '../utils/firebaseUtils';
 
 
 
@@ -15,51 +16,28 @@ var Landing  = React.createClass({
     this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com");
     console.log(this.firebaseRef)
   },
-  getInitialState() {
-    return {
-      value: ''
-    };
-  },
-  handleChange() {
-    this.setState({
-      user: this.refs.user.getValue(),
-      password: this.refs.password.getValue()
-    });
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
   },
 
   handleSubmit(e) {
-    e.preventDefault();
-    console.log('context', this.context)
-    var password = this.refs.password.getValue();
-    var email = this.refs.user.getValue()
-    this.firebaseRef.createUser({
-      password : password,
-      email    : email
-    }, function(error, userData) {
-      if (error) {
-        console.log("Error creating user:", error);
-      } else {
-        console.log("Successfully created user account with uid:", userData.uid);
-      }
-    });
-
-    this.setState({value: ""});
+   e.preventDefault();
+   firebaseUtils.loginWithFB(function(result){
+     if(result){
+      console.log('context', this)
+       this.context.router.replace('home')
+     }
+   }.bind(this));
   },
 
   render (){
     return (
-    <div>
-      <video autoPlay loop id="bgvid">
-        <source src="./assets/SkyAndClouds.mp4" type="video/mp4" />
-      </video>
-      <h1 className="awesome-jar">#Awesome Jar</h1>
-      <div className="button-container">
-        <span>
-          <button href="/login" className="landing-buttons"><Link to="/login">Login</Link></button>
-          <button href="/signup" className="landing-buttons"><Link to="/signup">Sign Up</Link></button>
-        </span>
+      <div>
+        <h1 className="awesome-jar">#Awesome Jar</h1>
+        <div className="login">
+          <button type="submit" onClick={this.handleSubmit} className="float loginBtn">Login with FB</button>
+        </div>
       </div>
-    </div>
     )
   }
 })

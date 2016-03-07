@@ -1,4 +1,3 @@
-var Login = require("../components/login.js");
 var firebaseUtils = require('./firebaseUtils');
 
 function requireAuth(nextState, replace) {

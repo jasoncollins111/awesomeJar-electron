@@ -42,9 +42,18 @@ var firebaseUtils = {
         authData.email = userObj.email;
         cachedUser = authData;
         cb(authData);
-        console.log('cbOnRegister',cbOnRegister)
         this.onChange(true);
         cbOnRegister && cbOnRegister(true);
+      }
+    }.bind(this));
+  },
+  loginWithFB: function(cb){
+    ref.authWithOAuthPopup("facebook", function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+        cb(authData)
       }
     }.bind(this));
   },
