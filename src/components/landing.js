@@ -9,12 +9,9 @@ import Firebase from "firebase"
 import {Input} from 'react-bootstrap';
 import firebaseUtils from '../utils/firebaseUtils';
 
-
-
 var Landing  = React.createClass({
   componentWillMount() {
     this.firebaseRef = new Firebase("https://awesomejar.firebaseio.com");
-    console.log(this.firebaseRef)
   },
   contextTypes: {
     router: React.PropTypes.object.isRequired
@@ -24,18 +21,102 @@ var Landing  = React.createClass({
    e.preventDefault();
    firebaseUtils.loginWithFB(function(result){
      if(result){
-      console.log('context', this)
-       this.context.router.replace('home')
+      console.log('result', result)
+      var {displayName} = result.facebook;
+      var {profileImageURL} = result.facebook
+      this.context.router.replace('home')
      }
    }.bind(this));
   },
 
   render (){
+    var style = {clear:'both'}
     return (
       <div>
-        <h1 className="awesome-jar">#Awesome Jar</h1>
-        <div className="login">
-          <button type="submit" onClick={this.handleSubmit} className="float loginBtn">Login with FB</button>
+        <h1 className="awesome-jar">#Light-Jar</h1>
+        <div style={style}></div>
+
+        <div className="container" onClick={this.handleSubmit}>
+        <div className="square black">
+        <div className="square3">
+        <div className="square black">
+        <div className="square2">
+        <div className="square black">
+        <div className="square3">
+        <div className="square black">
+        <div className="square2">
+        <div className="square4 black">
+        <div className="square3">
+        <div className="square black">
+        <div className="square2">
+        <div className="square black">
+        <div className="square4">
+        <div className="square black">
+        <div className="square2">
+        <div className="square black">
+        <div className="square3">
+        <div className="square4 black">
+        <div className="square2">
+        <div className="square black">
+        <div className="square2">
+        <div className="square3 black">
+        <div className="square4">
+        <div className="square3 black">
+        <div className="square2">
+        <div className="square3 black">
+        <div className="square4">
+        <div className="square2 black">
+        <div className="square3">
+        <div className="square2 black">
+        <div className="square3">
+        <div className="square4 black">
+        <div className="square3">
+        <div className="square2 black">
+        <div className="square3">
+        <div className="square4">
+        <div className="square2 black">
+        <div className="square4">
+        <div className="square2 black">
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
         </div>
       </div>
     )

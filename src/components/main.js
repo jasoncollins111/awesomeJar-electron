@@ -9,7 +9,7 @@ module.exports = React.createClass({
   },
   handleLogout: function(loggedIn){
     this.setState({
-      loggedIn: loggedIn
+      loggedIn: firebaseUtils.logout()
     });
   },
   componentWillMount: function(){

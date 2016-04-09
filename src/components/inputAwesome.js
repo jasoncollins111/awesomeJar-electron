@@ -1,16 +1,29 @@
-import React from 'react'
+var React = require("react");
 import {Input} from 'react-bootstrap';
-import Firebase from 'firebase'
 
-const InputAwesome = React.createClass({
-  componentWillMount() {
-    var userId = this.props.user;
-    this.jar = new Firebase("https://awesomejar.firebaseio.com/user/"+userId+"/items");
-  },
+import NavBar from '../shared/navbar';
+import SideBar from '../shared/sidebar';
+import Principles from './firstprinciples';
+import Jar from './eventsJar';
+import ReactFireMixin from 'reactfire';
+import Home from './home'
+
+var InputAwesome = React.createClass({
+  mixins: [ReactFireMixin],
+
   getInitialState() {
+    var fbRef = new Firebase("https://awesomejar.firebaseio.com")
+    var userId = fbRef.getAuth().uid;
     return {
+      userId : userId,
       value: ''
     };
+  },
+  componentWillMount: function() {
+    var userId = this.state.userId;
+    this.jar = new Firebase("https://awesomejar.firebaseio.com/user/"+userId+"/items")
+    var principlesList = new Firebase("https://awesomejar.firebaseio.com/user/"+userId+"/principles");
+    this.bindAsArray(principlesList, "principles");
   },
   handleChange() {
     this.setState({
@@ -25,17 +38,18 @@ const InputAwesome = React.createClass({
     });
     this.setState({value: ""});
   },
-
-  render() {
-    return (
-      <div className="good-input">
-        <h3 className="motivation">Good things happen!</h3>
+  render: function(){
+    return <div>
+      
+      <Home/>
+      <div className="input-box">
+        <h3 className="motivation">Good Jar</h3>
         <span>
           <Input
             className="jar-text"
-            type="textarea"
+            type="text"
             value={this.state.value}
-            placeholder="Enter something awesome"
+            placeholder=""
             hasFeedback
             ref="input"
             groupClassName="group-class"
@@ -45,9 +59,10 @@ const InputAwesome = React.createClass({
           <button type="button" className="btn btn-primary btn-block jar-btn" onClick={this.handleSubmit}>Submit</button>
         </span>
       </div>
-    );
+    </div>
   }
 });
-export default InputAwesome
+export default InputAwesome;
+
 
 

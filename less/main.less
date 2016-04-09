@@ -1,13 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700);
-@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css);
 @import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css);
 
-@body-bg:#fff;
-@myDiv-fg: #f00;
+@body-bg: white;
+@myDiv-fg: black;
 @shadow-color: #23203b;
 @input-color: lighten(#AB9E95, 10%);
 @input-border-color: #5E5165;
-@button-background-color: rgba(255, 255, 255, 0.5);
+@button-background-color: #14B9BE;
+
 
 
 body {
@@ -37,13 +37,29 @@ input[type="text"]::-webkit-input-placeholder {
 input[type="password"]::-webkit-input-placeholder {
    color: #255254;
 }
+.nav{
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  background: #14B9BE;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+.sidebar{
+  position:fixed;
+  top:50px;
+  bottom: 0;
+  width: 19%;
+  background-color: #B73144;
+  color:#FAEBD7;
+}
 .awesome-jar{
   font-weight: lighter;
   float: left;
   margin-left: 19px;
-  color: rgba(255, 255, 255, 0.9);
+  color: black;
   position: relative;
-  top: -25px;
 }
 .normalize-input {
   display: block;
@@ -75,39 +91,16 @@ button {
   font-size: 1.6em;
   font-weight: 300;
   padding: 5px 0;
-  width: 100%;
-  border-radius: 2px;
-  color: #255254;
+  width: 20%;
+  border-radius: 3px;
+  color: #FAEBD7;
 
   &:hover {
-    background: tint(@button-background-color, 14%);
+    background: tint(#5FC3E4, 14%);
     -webkit-animation: hop 1s;
     animation: hop 1s;
     text-decoration: none;
   }
-}
-.landing-button{
-  margin: auto;
-  margin-top: 20%;
-  width: 25%;
-  margin-right: 10px;
-}
-
-video#bgvid {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    -ms-transform: translateX(-50%) translateY(-50%);
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    background: no-repeat;
-    background-size: cover;
 }
 
 .group-class{
@@ -116,11 +109,12 @@ video#bgvid {
   display: inline-flex;
 
 }
-.good-input{
+.input-box{
   border: 1px solid black;
   width: 40%;
   margin:auto;
-  margin-top: 2%;
+  margin-top: 11%;
+  z-index: 1;
 
     .motivation{
       margin: 20px;
@@ -140,11 +134,11 @@ video#bgvid {
       margin: 0 auto;
       margin-top: 20px;
       margin-bottom: 2%;
-      background-color: #255254;
+      background-color: #14B9BE;
       display: inline-block;
 
       &:hover {
-        background: tint(#255254,  4%);
+        background: tint(#14C7CC, 14%);
         -webkit-animation: hop 1s;
         animation: hop 1s;
         text-decoration: none;
@@ -152,17 +146,14 @@ video#bgvid {
     }
 }
 
-
-
 .jar-item{
-  border: 1px solid black;
+  text-align:left;
   font-size: 20px;
   font-weight: 400;
   margin: auto;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  width: 350px;
-  height: 55px;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  height: 20px;
   border-radius: 2px;
 }
 ul{
@@ -173,13 +164,76 @@ ul{
    display: flex;
    -webkit-flex-direction: row;
    flex-direction: row;
-   -webkit-align-items: center;
-   align-items: center;
-   -webkit-justify-content: center;
-   justify-content: center;
+   -webkit-align-items: left;
+   align-items: left;
+   -webkit-justify-content: left;
+   justify-content: left;
 }
 .loginBtn{
-  margin-top: 60%;
+  margin: auto;
+  margin-top: 20%;
   background-color: #FCF8E3;
   color:black
+}
+
+
+.container{
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: 35%;
+  left: 47%;
+}
+
+.square{
+  height: 94%;
+  width: 94%;
+  background: radial-gradient(#E55D87 , #5FC3E4);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -47% 0 0 -47%;
+}
+.square2{
+  height: 94%;
+  width: 94%;
+  background: #B73144;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -47% 0 0 -47%;
+}
+.square3{
+  height: 94%;
+  width: 94%;
+  background: #009999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -47% 0 0 -47%;
+}
+.square4{
+  height: 94%;
+  width: 94%;
+  background: #0E82C5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -47% 0 0 -47%;
+}
+
+
+.black{ 
+  background: white;
+  animation: rotate 15s infinite ease-out; 
+}
+
+@keyframes rotate{
+  0%{ transform: rotate(225deg);
+   }
+  50%{
+    transform: rotate(135deg)
+  }
+  100%{ transform: rotate(315deg);
+  }  
 }
