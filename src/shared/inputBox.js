@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Input} from 'react-bootstrap';
+import ReactFireMixin from 'reactfire';
+
 
 var InputBox = React.createClass({
+  mixins: [ReactFireMixin],
+
   getInitialState() {
     return {value: ''}
   },
@@ -14,6 +18,7 @@ var InputBox = React.createClass({
   handleSubmit(e) {
     e.preventDefault();
     var date = new Date;
+    console.log('this jar', this.props.jar)
     this.props.jar.push({
       text: this.refs.input.getValue(),
       date: JSON.stringify(date)

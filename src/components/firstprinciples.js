@@ -29,7 +29,7 @@ var Principles = React.createClass({
     return <div>
       
       <Home/>
-      <InputBox jar={this.principlesList} type="Principles"/>
+      <InputBox jar={this.state.principles} type="Principles"/>
     </div>
   }
 });

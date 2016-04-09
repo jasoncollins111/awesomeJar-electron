@@ -10,7 +10,7 @@ var Main = require('../components/main.js');
 var Home = require("../components/home.js");
 var Goals = require('../components/goals.js');
 var Principles = require('../components/firstprinciples.js');
-import AwesomeJar from '../components/inputAwesome'
+import GoodJar from '../components/goodjar'
 import requireAuth from '../utils/authenticated.js'
 var routes = (
   <Router history={hashHistory}>
@@ -18,7 +18,7 @@ var routes = (
       <IndexRoute component={Landing} />
       <Route path='login' component={Landing} />
       <Route path='home' component={Home}/>
-      <Route path='goodJar' component={AwesomeJar}/>
+      <Route path='goodJar' component={GoodJar}/>
       <Route path='goals' component={Goals}/>
       <Route path='principles' component={Principles}/>
 
