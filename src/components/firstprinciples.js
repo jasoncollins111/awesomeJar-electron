@@ -3,7 +3,6 @@ import {Input} from 'react-bootstrap';
 import InputBox from '../shared/inputBox';
 import NavBar from '../shared/navbar';
 import SideBar from '../shared/sidebar';
-import InputAwesome from './inputAwesome';
 import Jar from './eventsJar';
 import ReactFireMixin from 'reactfire';
 import Home from './home'

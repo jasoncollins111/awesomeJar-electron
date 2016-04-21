@@ -3,7 +3,6 @@ var React = require("react");
 import NavBar from '../shared/navbar';
 import SideBar from '../shared/sidebar';
 import Goals from './goals'
-import InputAwesome from './inputAwesome';
 import Principles from './firstprinciples';
 import Jar from './eventsJar';
 import ReactFireMixin from 'reactfire';

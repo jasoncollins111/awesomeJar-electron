@@ -21,7 +21,6 @@ var routes = (
       <Route path='goodJar' component={GoodJar}/>
       <Route path='goals' component={Goals}/>
       <Route path='principles' component={Principles}/>
-
     </Route>
   </Router>
 );
